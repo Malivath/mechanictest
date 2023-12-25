@@ -1,0 +1,41 @@
+// Services.scss
+$service-bg: #eeeeee;
+$service-text: #666;
+
+.services {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: $service-bg;
+  padding: 20px 0;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5),
+  0 5px 10px rgba(0, 0, 0, 0.2);
+
+  h2, p {
+    padding: 10px 20px;
+  }
+
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+  .service {
+    border-radius: 15px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5),
+    0 5px 10px rgba(0, 0, 0, 0.2);
+
+    h3 {
+      color: #333;
+    }
+
+    p {
+      color: $service-text;
+    }
+  }
+}

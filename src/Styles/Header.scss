@@ -1,0 +1,104 @@
+// Header.scss
+$header-bg: #363636;
+$header-color: #00027c;
+$gradient-start: #4a4b4e; // Light metallic color
+$gradient-end: #52555c; // Dark metallic color
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Permanent+Marker&family=Roboto:wght@100&family=Rye&display=swap');
+
+$neon-color: rgb(0, 23, 137); // Neon color, change as desired
+$neon-shadow-color: rgba(9, 197, 197, 0.8); // Adjust the color and opacity for the glow
+
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px $neon-shadow-color,
+      0 0 10px $neon-shadow-color,
+      0 0 20px $neon-color,
+      0 0 30px $neon-color,
+      0 0 40px $neon-color,
+      0 0 50px $neon-color,
+      0 0 75px $neon-color;
+  }
+  50% {
+    text-shadow:
+      0 0 10px $neon-shadow-color,
+      0 0 20px $neon-shadow-color,
+      0 0 30px $neon-color,
+      0 0 40px $neon-color,
+      0 0 50px $neon-color,
+      0 0 60px $neon-color,
+      0 0 85px $neon-color;
+  }
+}
+
+// Keyframes for the subtle shine effect
+@keyframes shine {
+  0% {
+    background-position: top right;
+  }
+  50% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+.header {
+  background: linear-gradient(120deg, $gradient-start, $header-bg, $gradient-end);
+  background-size: 200% 200%; // Extend the size of the gradient for the animation
+  color: $header-color;
+  padding: 10px 0;
+  position: fixed; // Fixes the header at the top of the viewport
+  top: 0; // Aligns the header to the very top of the viewport
+  left: 0; // Aligns the header to the left of the viewport
+  width: 100%; // Ensures the header spans the full width of the viewport
+  height: 15%;
+  z-index: 1000; // Ensures the header is above other content
+  display: flex; // Use flexbox for layout
+  justify-content: center; // Center-align children horizontally
+  align-items: center; // Center-align children vertically
+  text-align: center; // Ensure text is centered
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.2); // Enhanced 3D shadow
+  animation: shine 8s linear infinite; // Animation for subtle shine effect
+
+  .logo {
+    position: absolute; // Absolute positioning to place on the left
+    left: 20px; // Space from the left edge
+    max-width: 15%; // Adjust as needed
+    max-height: 150px; // Adjust as needed
+    border-radius: 25%; // Rounded corners
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.2); // Shadow for depth
+
+  }
+  
+  .header-title {
+    font-family: 'Bungee Inline', sans-serif;
+
+    font-family: 'Permanent Marker', cursive;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Rye', serif;
+    font-size: 4em; // Adjust size as needed
+    color: $neon-color; // Set the text color to the neon color
+    text-shadow:
+      0 0 5px $neon-shadow-color,
+      0 0 10px $neon-shadow-color,
+      0 0 20px $neon-color,
+      0 0 30px $neon-color,
+      0 0 40px $neon-color,
+      0 0 50px $neon-color,
+      0 0 75px $neon-color;
+    
+    // Apply the animation
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+  }
+  @media (max-width: 900px) {
+    font-size: 75%;
+  }
+  @media (max-width: 750px){
+  font-size: 60%;
+  }
+}
+

@@ -1,0 +1,30 @@
+// Define your colors
+$dark-blue: #00008B; // Adjust to your preferred dark blue
+$sky-blue: #87CEEB; // Adjust to your preferred sky blue
+
+// Include mixin for animation
+@mixin animation($name, $duration: 5s, $timing-function: ease, $iteration-count: infinite) {
+  animation: $name $duration $timing-function $iteration-count;
+}
+
+// Keyframes for the gradient animation
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Apply to the body or a specific container
+.animated-background {
+  height: 100vh; // Full screen height, adjust as needed
+  width: 100%; // Full width
+  background: linear-gradient(45deg, $dark-blue, $sky-blue); // 45-degree gradient
+  background-size: 200% 200%; // Size for the moving effect
+  @include animation(gradient-animation); // Apply the animation
+}

@@ -1,0 +1,96 @@
+// App.scss
+$body-font: 'Arial', sans-serif;
+$body-bg: #001aff;
+$dark-blue: #000066;
+$sky-blue: #002207;
+$neon-shadow-color: rgba(9, 197, 197, 0.8);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: $body-font;
+  line-height: 1.6;
+  color: #333;
+  background-color: $body-bg;
+  background-image: linear-gradient(45deg, $dark-blue, $sky-blue); // Animated gradient
+  background-size: 200% 200%; // Size for the moving effect
+  animation: gradient-animation 15s ease infinite; // Apply the animation
+  padding-top: 11%;
+  padding-bottom: 0px;
+  margin: 0; // Reset default margin
+  overflow-x: hidden; // Prevent horizontal scroll
+
+  @media (max-width: 2168px) {
+    padding-top: 17%;
+  }
+  @media (max-width: 1475px) {
+    padding-top: 22%;
+  }
+  @media (max-width: 1100px) {
+    padding-top: 27%;
+  }
+  @media (max-width: 875px) {
+    padding-top: 32%;
+  }
+  @media (max-width: 670px) {
+    padding-top: 34%;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.navigation-section {
+  margin-top: 5px;
+  display: grid; // Set up a grid container
+  grid-template-columns: repeat(3, 1fr); // Create three columns of equal size
+  gap: 10px; // Space between grid items
+  justify-items: center; // Center items horizontally
+  border-style: solid;
+  border-color: rgba(9, 197, 197, 0.8);
+  border-radius: 50px;
+  background-color: #333; 
+  box-shadow:
+  0 0 5px $neon-shadow-color,
+  0 0 10px $neon-shadow-color;
+  position: absolute; // Position it absolutely within the header
+  top: 15%; // Adjust this value based on the header's height and desired gap
+  width: 100%;
+  position: fixed;
+
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); // Stack items in a single column on smaller screens
+    gap: 1px;
+  }
+}

@@ -1,0 +1,73 @@
+// Contact.scss
+.contact {
+    max-width: 630px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5),
+    0 5px 10px rgba(0, 0, 0, 0.2);
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+  
+    form {
+      display: grid;
+      grid-gap: 20px;
+      padding: 20px;
+
+      @media (max-width: 2168px) {
+        // Adjust the maximum width for smaller screens
+        max-width: 90%; // or another value that suits your design
+        padding-top: 40px; // Increase top padding as needed
+    
+        // You might also want to adjust other properties here to ensure the design remains responsive and visually appealing
+      }
+  
+      @media (max-width: 700px) {
+        padding: 10px;
+      }
+  
+      div {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+  
+        input,
+        textarea {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+  
+          &:focus {
+            outline: 2px solid #0056b3;
+          }
+        }
+  
+        textarea {
+          resize: vertical;
+        }
+      }
+  
+      button {
+        background: #424242;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+  
+        &:hover {
+          background: #000000;
+        }
+      }
+    }
+  }
